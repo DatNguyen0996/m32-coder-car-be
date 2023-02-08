@@ -1,6 +1,6 @@
 # .env file:
 
-#### #MONGO_URI=mongodb+srv://Dat:<password>@m31-coder-car.ctuh2s4.mongodb.net/coder_cars
+#### #MONGO_URI=mongodb+srv://Dat:'password'@m31-coder-car.ctuh2s4.mongodb.net/coder_cars
 
 #### PORT=5000
 
