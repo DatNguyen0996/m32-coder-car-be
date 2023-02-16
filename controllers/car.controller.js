@@ -74,7 +74,7 @@ carController.editCar = async (req, res, next) => {
     const errors = validationResult(req);
 
     if (!errors.isEmpty()) {
-      throw new AppError(402, JSON.stringify(errors.array()), "Bad Request");
+      throw new AppError(402, "Bad Request", errors.array());
     }
 
     const { id } = req.params;
@@ -112,7 +112,7 @@ carController.deleteCar = async (req, res, next) => {
     const errors = validationResult(req);
 
     if (!errors.isEmpty()) {
-      throw new AppError(402, JSON.stringify(errors.array()), "Bad Request");
+      throw new AppError(402, "Bad Request", errors.array());
     }
 
     const { id } = req.params;
