@@ -1,17 +1,23 @@
-const express = require('express');
-const { createCar, getCars, editCar, deleteCar } = require('../controllers/car.controller');
+const express = require("express");
+const { validate } = require("../validator/validator.js");
+const {
+  createCar,
+  getCars,
+  editCar,
+  deleteCar,
+} = require("../controllers/car.controller");
 const router = express.Router();
 
 // CREATE
-router.post('/', createCar);
+router.post("/", createCar);
 
 // READ
-router.get('/', getCars);
+router.get("/", getCars);
 
 // UPDATE
-router.put('/:id', editCar);
+router.put("/:id", validate.validateId(), editCar);
 
 // // DELETE
-router.delete('/:id', deleteCar);
+router.delete("/:id", validate.validateId(), deleteCar);
 
 module.exports = router;
